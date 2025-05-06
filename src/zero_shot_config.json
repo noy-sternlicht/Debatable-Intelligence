@@ -1,0 +1,37 @@
+{
+  "data_path": "data.csv",
+  "output_path": "output/judges_results/",
+  "openai_key_path": "secret_keys/openai_key",
+  "anthropic_key_path": "secret_keys/anthropic_key",
+  "huggingface_key_path": "secret_keys/huggingface_key",
+  "max_tokens": 4096,
+  "temperature": 0.01,
+  "experiments": [
+    {
+      "name": "zero-shot-good-speech-guidelines",
+      "prompt_path": "./prompts/zero_shot_good_speech_annotation_guidelines.txt",
+      "human_annotations_data_field": "goodopeningspeech",
+      "run": true
+    },
+    {
+      "name": "zero-shot-good-speech-guidelines-short-cot",
+      "prompt_path": "./prompts/zero_shot_good_speech_annotations_guidelines_short_cot.txt",
+      "human_annotations_data_field": "goodopeningspeech",
+      "run": true
+    }
+  ],
+  "models": {
+    "openai": [
+      "o3"
+    ],
+    "huggingface": [
+      "Qwen/Qwen2.5-72B-Instruct"
+    ],
+    "anthropic": [
+      "claude-3-7-sonnet-20250219"
+    ]
+  },
+  "participating_models": [
+    "anthropic"
+  ]
+}
