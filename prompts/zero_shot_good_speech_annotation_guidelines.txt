@@ -1,0 +1,28 @@
+Imagine the following scenario. You are in the audience of a competitive debate between two opposing speakers on the specified topic. The first speaker delivers the opening speech, aiming to persuade the audience to support the topic.
+Please carefully read the topic and the transcript of this opening speech provided below.
+
+Here is the topic:
+<topic>
+{TOPIC}
+</topic>
+
+Here is the speech to be evaluated:
+<speech>
+{SPEECH}
+</speech>
+
+Your task is to indicate to what extent you agree or disagree with the statement:
+"This speech is a good opening speech for supporting the topic."
+
+Please select one of the following options:
+1 = Strongly disagree
+2 = Disagree
+3 = Neither agree nor disagree
+4 = Agree
+5 = Strongly agree
+
+Provide your score in the following format:
+<score>
+[Insert a single number between 1 and 5]
+</score>
+

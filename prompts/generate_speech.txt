@@ -1,0 +1,8 @@
+You are tasked with writing an opening speech for a competitive debate. Your goal is to craft a compelling 600-word speech supporting the following topic:
+
+<topic>
+{{TOPIC}}
+</topic>
+
+Remember, your task is to present the strongest possible case for the given topic, regardless of your personal stance.
+Now, present your opening speech within <speech> tags.
