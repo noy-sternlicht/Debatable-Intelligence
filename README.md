@@ -1,7 +1,4 @@
 <p align="center">
-  <img src="logo.svg" alt="Centered Image" width="250" />
-</p>
-<p align="center">
     <a href="XXX" target="_blank">Website</a> | <a href="xxx" target="_blank">Paper</a> | <a href="xxx" target="_blank">Data</a> <br>
 </p>
 
@@ -9,7 +6,10 @@
 
 ## LLM on Trial: Benchmarking LLM-as-a-Judge via Argumentation
 
-TODO: add a general description of the work
+As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we present a unique dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how well current state-of-the-art models perform on this complex task.
+<p align="center">
+  <img src="fig_1.svg" alt="Centered Image" width="300" />
+</p>
 
 ### Getting started
 
@@ -50,7 +50,9 @@ follows:
    for the keys.
 
 ### Benchmark data
+
 We make the benchmark data available at `data.csv`. The file contains the following fields:
+
 * `id`: The unique identifier for the speech.
 * `topic_id`: The unique identifier for the topic.
 * `topic`: The topic of the debate speech (e.g., "Community service should be mandatory").
@@ -65,8 +67,8 @@ We make the benchmark data available at `data.csv`. The file contains the follow
 1. **Run judges**: We use `scripts/run_judge_models.sh` to run a judge (or multiple judges) over the data. The script
    receives a config file defining which models to run, what prompt to use, and so on. We provide an example at
    `src/zero_shot_config.json`. You can modify it as follows:
-   ```json
-     {"data_path": "data.csv", # Path to the human annotated speeches
+   ```text
+     {"data_path": "data.csv",  # Path to the human annotated speeches
      "output_path": "output/judges_results/", # Where to save the results
      "openai_key_path": "secret_keys/openai_key", # Default keys location
      "anthropic_key_path": "secret_keys/anthropic_key",
