@@ -1,0 +1,10 @@
+{
+  "data_path": "data.csv",
+  "output_path": "output/generated_speeches",
+  "openai_key_path": "secret_keys/openai_key",
+  "openai_model": "gpt-4.1",
+  "max_tokens": 1024,
+  "temperature": 1.0,
+  "prompt_path": "prompts/generate_speech.txt",
+  "maximum_nr_words": 600
+}

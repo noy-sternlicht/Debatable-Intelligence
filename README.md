@@ -110,7 +110,8 @@ receives a config file defining which models to run, what prompt to use, and so 
 
 #### Analysis
 
-1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be structured as
+1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be
+   structured as
    follows:
    ```text
    {
@@ -140,8 +141,9 @@ receives a config file defining which models to run, what prompt to use, and so 
       ]
     }
     ```
-2. **Run pairwise agreement analysis**: Run `scripts/analyse_pairwise_agreement.sh`. You can modify the script parameters as follows:
-   
+2. **Pairwise agreement analysis (Kappa)**: Run `scripts/analyse_pairwise_agreement.sh`. You can modify the script
+   parameters as follows:
+
    ```bash
    python3 src/analyse_pairwise_agreement.py \
    --eval_models_config src/judges_results.json \  # The json file specifying the judges to evaluate
@@ -150,6 +152,12 @@ receives a config file defining which models to run, what prompt to use, and so 
    --min_shared_annotations 50 \   # Minimum number of shared annotations between judges, referred to as "minimum-sample" in the paper
    --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the first prompt, 'zero-shot-good-speech-guidelines-short-cot' for the CoT example 
    ```
+3. **Agreement with mean human rating (Tau)**: TODO
+
+#### Speech generation
+To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
+file `src/generate_speeches_config.json` defining the used parameters (e.g., temperature, maximum speech length...),
+which you can customize.
 
 ### Citation
 
