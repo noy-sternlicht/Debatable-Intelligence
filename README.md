@@ -1,10 +1,12 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-
 ## LLM on Trial: Benchmarking LLM-as-a-Judge via Argumentation
 
-As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we present a unique dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how well current state-of-the-art models perform on this complex task.
+As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
+propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we present a unique
+dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how
+well current state-of-the-art models perform on this complex task.
 <p align="center">
   <img src="fig_1.svg" alt="Centered Image" width="500" />
 </p>
@@ -27,7 +29,7 @@ A quick start guide to get you up and running with the code.
    pip install -r requirements.txt
    ```
 
-### Setting up API keys
+#### Setting up API keys
 
 Some of the code requires access to external APIs. You will need to set an OpenAI API key, an Anthropic key and a
 HuggingFace API key as
@@ -62,9 +64,12 @@ We make the benchmark data available at `data.csv`. The file contains the follow
 
 ### Reproducing paper results
 
-1. **Run judges**: We use `scripts/run_judge_models.sh` to run a judge (or multiple judges) over the data. The script
-   receives a config file defining which models to run, what prompt to use, and so on. We provide an example at
-   `src/zero_shot_config.json`. You can modify it as follows:
+#### Run judges
+
+We use `scripts/run_judge_models.sh` to run a judge (or multiple judges) over the data. The script
+receives a config file defining which models to run, what prompt to use, and so on. We provide an example at
+`src/zero_shot_config.json`. You can modify it as follows:
+
    ```text
      {"data_path": "data.csv",  # Path to the human annotated speeches
      "output_path": "output/judges_results/", # Where to save the results
@@ -101,6 +106,49 @@ We make the benchmark data available at `data.csv`. The file contains the follow
      "participating_models": [
        "anthropic"
      ]}
+   ```
+
+#### Analysis
+
+1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be structured as
+   follows:
+   ```text
+   {
+     "eval_models": [
+       {
+         "name": "<judge_name>",   # For example, "o3" or "Judge-1"
+               "results": {
+            "<key_type>_<model_name>": "<results path>" # key_type can be "openai", "anthropic" or "huggingface"
+                }
+        }
+     ]
+   }
+   ```
+   We provide an example at `src/judges_results.json`. You can define **a judge ensemble** as follows:
+    ```text
+    {
+      "eval_models": [
+         {
+            "name": "ensemble_1 (o3 + gpt-4.1-mini + Qwen2.5-32B-Instruct)",
+            "results": {
+              "openai_o3": "output/o3",   # ensemble model 1
+              "openai_gpt-4.1-mini": "output/gpt-4.1", # ensemble model 2
+              "huggingface_Qwen/Qwen2.5-32B-Instruct": "output/zero_shot_qwen_32b" # ensemble model 3
+              ...
+            }
+         }
+      ]
+    }
+    ```
+2. **Run pairwise agreement analysis**: Run `scripts/analyse_pairwise_agreement.sh`. You can modify the script parameters as follows:
+   
+   ```bash
+   python3 src/analyse_pairwise_agreement.py \
+   --eval_models_config src/judges_results.json \  # The json file specifying the judges to evaluate
+   --data_path data.csv \
+   --output_dir pairwise_agreement_results \  # Where to save the results
+   --min_shared_annotations 50 \   # Minimum number of shared annotations between judges, referred to as "minimum-sample" in the paper
+   --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the first prompt, 'zero-shot-good-speech-guidelines-short-cot' for the CoT example 
    ```
 
 ### Citation
