@@ -153,6 +153,7 @@ receives a config file defining which models to run, what prompt to use, and so 
    --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the first prompt, 'zero-shot-good-speech-guidelines-short-cot' for the CoT example 
    ```
 3. **Agreement with mean human rating (Tau)**: TODO
+4. **Analyse score distribution**: Run `scripts/analyse_scores_distribution.sh`
 
 #### Speech generation
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
