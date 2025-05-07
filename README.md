@@ -80,16 +80,16 @@ receives a config file defining which models to run, what prompt to use, and so 
      "temperature": 0.01,  # Judge temperature
      "experiments": [
        {
-         "name": "zero-shot-good-speech-guidelines",
+         "name": "zero-shot-good-speech-guidelines",   # No-CoT prompt
          "prompt_path": "./prompts/zero_shot_good_speech_annotation_guidelines.txt",
-         "human_annotations_data_field": "goodopeningspeech",
-         "run": true
+         "human_annotations_data_field": "goodopeningspeech", # Field containing the human annotations
+         "run": true    # Run models using this prompt
        },
        {
-         "name": "zero-shot-good-speech-guidelines-short-cot", 
+         "name": "zero-shot-good-speech-guidelines-short-cot",   # CoT prompt
          "prompt_path": "./prompts/zero_shot_good_speech_annotations_guidelines_short_cot.txt",
          "human_annotations_data_field": "goodopeningspeech",
-         "run": true
+         "run": true    
        }
      ],
      "models": { # Which models to run (divided by required key). For example, listing "openai" under "participating_models" will run the specified openai models.
