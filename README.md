@@ -6,7 +6,7 @@
 
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we present a unique dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how well current state-of-the-art models perform on this complex task.
 <p align="center">
-  <img src="fig_1.svg" alt="Centered Image" width="300" />
+  <img src="fig_1.svg" alt="Centered Image" width="500" />
 </p>
 
 ### Getting started
@@ -123,7 +123,7 @@ If you use this code or data in your research, please cite our paper:
 ### Authors
 
 * [Noy Sternlicht](https://x.com/NoySternlicht)
-* [Ariel Gera](todo)
-* [Roy Bar-Haim](todo)
+* [Ariel Gera](https://scholar.google.com/citations?user=ESCkne8AAAAJ&hl=en)
+* [Roy Bar-Haim](https://research.ibm.com/people/roy-bar-haim)
 * [Tom Hope](https://tomhoper.github.io/)
-* [Noam Slonim](todo)
+* [Noam Slonim](https://research.ibm.com/people/noam-slonim)
