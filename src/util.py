@@ -76,21 +76,9 @@ def agg_model_predictions(model_pred: Dict[str, list]) -> Dict[str, Dict[str, in
     return agg_predictions
 
 
-def aggregate_human_annotations_majority(annotations: pd.Series) -> int:
-    majority_vote = max(set(annotations), key=annotations.count)
-    return majority_vote
-
 
 def aggregate_human_annotations_rounded_avg(annotations: pd.Series) -> int:
     return round(sum(annotations) / len(annotations))
-
-
-def aggregate_human_annotations_avg(annotations: pd.Series, normalize=False) -> float:
-    if normalize:
-        annotations = zscore(annotations)
-
-    avg = sum(annotations) / len(annotations)
-    return avg
 
 
 def read_annotation_data(annotations_path: str) -> pd.DataFrame:
@@ -100,8 +88,6 @@ def read_annotation_data(annotations_path: str) -> pd.DataFrame:
         nr_nans = annotations[col].isna().sum()
         if not nr_nans:
             annotations[col] = annotations[col].apply(ast.literal_eval)
-
-    # annotations = annotations.dropna()
 
     return annotations
 
@@ -170,30 +156,6 @@ def get_unique_values(annotations1, annotations2):
     return unique_values_1, unique_values_2
 
 
-def compute_pearson(annotations1, annotations2, undefined_value=None, normalize=False):
-    unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
-    if len(unique_values_1) == 1 or len(unique_values_2) == 1:
-        return undefined_value
-
-    if normalize:
-        annotations1 = zscore(annotations1)
-        annotations2 = zscore(annotations2)
-    pearson_correlation, _ = pearsonr(annotations1, annotations2)
-    return pearson_correlation
-
-
-def compute_spearman(annotations1, annotations2, undefined_value=None, normalize=False):
-    unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
-    if len(unique_values_1) == 1 or len(unique_values_2) == 1:
-        return undefined_value
-
-    if normalize:
-        annotations1 = zscore(annotations1)
-        annotations2 = zscore(annotations2)
-
-    spearman_correlation, _ = spearmanr(annotations1, annotations2)
-    return spearman_correlation
-
 
 def compute_kendall_tau(annotations1, annotations2, variant, undefined_value=None, normalize=False):
     unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
@@ -222,29 +184,6 @@ def compute_kappa_agreement(annotations1, annotations2, undefined_value=None):
     kappa = cohen_kappa_score(annotations1, annotations2, weights='quadratic', labels=[-1, 1, 2, 3, 4, 5])
     return kappa
 
-
-def compute_krippendorff_alpha(annotations1, annotations2, undefined_value=None, normalize=False):
-    unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
-    if len(unique_values_1) == 1 or len(unique_values_2) == 1:
-        return undefined_value
-
-    if normalize:
-        annotations1 = zscore(annotations1)
-        annotations2 = zscore(annotations2)
-
-    reliability_data_matrix = np.array([annotations1.values, annotations2.values])
-    return krippendorff.alpha(reliability_data_matrix, level_of_measurement='interval')
-
-
-def compute_mae(annotations1: pd.Series, annotations2: pd.Series, undefined_value=None, normalize=False):
-    if normalize:
-        unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
-        if len(unique_values_1) == 1 or len(unique_values_2) == 1:
-            return undefined_value
-        annotations1 = zscore(annotations1)
-        annotations2 = zscore(annotations2)
-    mae = (annotations1 - annotations2).abs().mean()
-    return mae
 
 
 def word_tokenize_text(text: str) -> List[str]:
