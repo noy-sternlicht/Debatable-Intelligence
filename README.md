@@ -141,7 +141,7 @@ receives a config file defining which models to run, what prompt to use, and so 
       ]
     }
     ```
-2. **Pairwise agreement analysis (Kappa)**: Run `scripts/analyse_pairwise_agreement.sh`. You can modify the script
+2. **Run pairwise agreement analysis (Kappa)**: Run `scripts/analyse_pairwise_agreement.sh`. You can modify the script
    parameters as follows:
 
    ```bash
@@ -152,8 +152,8 @@ receives a config file defining which models to run, what prompt to use, and so 
    --min_shared_annotations 50 \   # Minimum number of shared annotations between judges, referred to as "minimum-sample" in the paper
    --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the first prompt, 'zero-shot-good-speech-guidelines-short-cot' for the CoT example 
    ```
-3. **Agreement with mean human rating (Tau)**: TODO
-4. **Analyse score distribution**: Run `scripts/analyse_scores_distribution.sh`
+3. **Run agreement with mean human rating (Tau)**: TODO
+4. **Run score distribution analysis**: Run `scripts/analyse_scores_distribution.sh`
 
 #### Speech generation
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
