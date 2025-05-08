@@ -150,9 +150,16 @@ receives a config file defining which models to run, what prompt to use, and so 
    --data_path data.csv \
    --output_dir pairwise_agreement_results \  # Where to save the results
    --min_shared_annotations 50 \   # Minimum number of shared annotations between judges, referred to as "minimum-sample" in the paper
-   --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the first prompt, 'zero-shot-good-speech-guidelines-short-cot' for the CoT example 
+   --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the no-CoT experiment, 'zero-shot-good-speech-guidelines-short-cot' for the CoT experiment 
    ```
-3. **Run agreement with mean human rating (Tau)**: TODO
+3. **Run agreement with mean human rating (Tau)**:  Run `scripts/analyse_agreement_with_mean.sh`. You can adjust the script parameters as follows:
+    ```bash
+   python3 src/analyse_agreement_with_mean.py \
+   --eval_models_config src/judges_results.json \ # The json file specifying the judges to evaluate
+   --output_path eval_results \ # Where to save the results
+   --data_path data.csv \
+   --prompt 'zero-shot-good-speech-guidelines-short-cot'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the no-CoT experiment, 'zero-shot-good-speech-guidelines-short-cot' for the CoT experiment.
+    ```
 4. **Run score distribution analysis**: Run `scripts/analyse_scores_distribution.sh`
 
 #### Speech generation

@@ -66,20 +66,13 @@ def get_model_size(model_name):
 
 
 def agg_model_predictions(model_pred: Dict[str, list]) -> Dict[str, Dict[str, int]]:
-    agg_predictions = {'majority': {}, 'rounded_avg': {}, 'avg': {}}
+    agg_predictions = {'rounded_avg': {}}
     for key, values in model_pred.items():
         for agg_func in agg_predictions.keys():
             if key not in agg_predictions[agg_func]:
                 agg_predictions[agg_func][key] = -1
-            if agg_func == 'majority':
-                agg_val = max(set(values), key=values.count)
-                agg_predictions[agg_func][key] = agg_val
-            elif agg_func == 'rounded_avg':
-                agg_val = round(sum(values) / len(values))
-                agg_predictions[agg_func][key] = agg_val
-            elif agg_func == 'avg':
-                agg_val = sum(values) / len(values)
-                agg_predictions[agg_func][key] = agg_val
+            agg_val = round(sum(values) / len(values))
+            agg_predictions['rounded_avg'][key] = agg_val
     return agg_predictions
 
 
