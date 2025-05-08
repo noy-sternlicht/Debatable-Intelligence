@@ -1,6 +1,8 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
+
+
 ## LLM on Trial: Benchmarking LLM-as-a-Judge via Argumentation
 
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
@@ -8,8 +10,24 @@ propose using debate speech evaluation as a new benchmarking task for LLM judges
 dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how
 well current state-of-the-art models perform on this complex task.
 <p align="center">
-  <img src="fig_1.svg" alt="Centered Image" width="500" />
+  <img src="fig_1.svg" alt="Centered Image" width="400" />
 </p>
+
+### Table of Contents
+<!-- TOC -->
+ * [Getting started](#getting-started)
+   * [Setting up API keys](#setting-up-api-keys)
+ * [Benchmark data](#benchmark-data)
+ * [Reproducing paper results](#reproducing-paper-results)
+   * [Run judges](#run-judges)
+   * [Analysis](#analysis)
+   * [Speech generation](#speech-generation)
+ * [Citation](#citation)
+ * [Authors](#authors)
+<!-- TOC -->
+
+
+
 
 ### Getting started
 
