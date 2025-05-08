@@ -13,9 +13,8 @@ well current state-of-the-art models perform on this complex task.
   <img src="fig_1.svg" alt="Centered Image" width="400" />
 </p>
 
------
 
-### Table of Contents
+## Table of Contents
 <!-- TOC -->
  * [Getting started](#getting-started)
    * [Setting up API keys](#setting-up-api-keys)
