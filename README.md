@@ -16,21 +16,21 @@ well current state-of-the-art models perform on this complex task.
 
 ## Table of Contents
 <!-- TOC -->
- * [Getting started](#getting-started)
-   * [Setting up API keys](#setting-up-api-keys)
- * [Benchmark data](#benchmark-data)
- * [Reproducing paper results](#reproducing-paper-results)
-   * [Run judges](#run-judges)
-   * [Analysis](#analysis)
-   * [Speech generation](#speech-generation)
- * [Citation](#citation)
- * [Authors](#authors)
+  * [Getting started](#getting-started)
+    * [Setting up API keys](#setting-up-api-keys)
+  * [Benchmark data](#benchmark-data)
+  * [Reproducing paper results](#reproducing-paper-results)
+    * [Run judges](#run-judges)
+    * [Analysis](#analysis)
+    * [Speech generation](#speech-generation)
+  * [Citation](#citation)
+  * [Authors](#authors)
 <!-- TOC -->
 
 
 
 
-### Getting started
+## Getting started
 
 A quick start guide to get you up and running with the code.
 
@@ -48,7 +48,7 @@ A quick start guide to get you up and running with the code.
    pip install -r requirements.txt
    ```
 
-#### Setting up API keys
+### Setting up API keys
 
 Some of the code requires access to external APIs. You will need to set an OpenAI API key, an Anthropic key and a
 HuggingFace API key as
@@ -68,7 +68,7 @@ follows:
    The files specified in the above snippet (`secret_keys/***_key`) are the default locations where the code will look
    for the keys.
 
-### Benchmark data
+## Benchmark data
 
 We make the benchmark data available at `data.csv`. The file contains the following fields:
 
@@ -81,9 +81,9 @@ We make the benchmark data available at `data.csv`. The file contains the follow
 * `#labelers`: The number of human annotators who rated the speech.
 * `labeler_ids`: A list of the unique identifiers for the human annotators who rated the speech.
 
-### Reproducing paper results
+## Reproducing paper results
 
-#### Run judges
+### Run judges
 
 We use `scripts/run_judge_models.sh` to run a judge (or multiple judges) over the data. The script
 receives a config file defining which models to run, what prompt to use, and so on. We provide an example at
@@ -127,7 +127,7 @@ receives a config file defining which models to run, what prompt to use, and so 
      ]}
    ```
 
-#### Analysis
+### Analysis
 
 1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be
    structured as
@@ -181,12 +181,12 @@ receives a config file defining which models to run, what prompt to use, and so 
     ```
 4. **Run score distribution analysis**: Run `scripts/analyse_scores_distribution.sh`
 
-#### Speech generation
+### Speech generation
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
 file `src/generate_speeches_config.json` defining the used parameters (e.g., temperature, maximum speech length...),
 which you can customize.
 
-### Citation
+## Citation
 
 If you use this code or data in your research, please cite our paper:
 
@@ -203,7 +203,7 @@ If you use this code or data in your research, please cite our paper:
 }
 ```
 
-### Authors
+## Authors
 
 * [Noy Sternlicht](https://x.com/NoySternlicht)
 * [Ariel Gera](https://scholar.google.com/citations?user=ESCkne8AAAAJ&hl=en)
