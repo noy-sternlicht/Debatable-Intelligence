@@ -184,7 +184,7 @@ receives a config file defining which models to run, what prompt to use, and so 
 ### Speech generation
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
 file `src/generate_speeches_config.json` defining the used parameters (e.g., temperature, maximum speech length...),
-which you can customize.
+which you can customize. `GPT_4_1_speeches.csv` contains the 152 generated speeches we analyze in the paper. 
 
 ## Citation
 
