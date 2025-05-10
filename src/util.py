@@ -76,7 +76,6 @@ def agg_model_predictions(model_pred: Dict[str, list]) -> Dict[str, Dict[str, in
     return agg_predictions
 
 
-
 def aggregate_human_annotations_rounded_avg(annotations: pd.Series) -> int:
     return round(sum(annotations) / len(annotations))
 
@@ -85,6 +84,8 @@ def read_annotation_data(annotations_path: str) -> pd.DataFrame:
     annotations = pd.read_csv(annotations_path)
     list_cols = ['labeler_ids', 'goodopeningspeech']
     for col in list_cols:
+        if col not in annotations.columns:
+            continue
         nr_nans = annotations[col].isna().sum()
         if not nr_nans:
             annotations[col] = annotations[col].apply(ast.literal_eval)
@@ -156,7 +157,6 @@ def get_unique_values(annotations1, annotations2):
     return unique_values_1, unique_values_2
 
 
-
 def compute_kendall_tau(annotations1, annotations2, variant, undefined_value=None, normalize=False):
     unique_values_1, unique_values_2 = get_unique_values(annotations1, annotations2)
     if len(unique_values_1) == 1 or len(unique_values_2) == 1:
@@ -183,7 +183,6 @@ def compute_kappa_agreement(annotations1, annotations2, undefined_value=None):
             return undefined_value
     kappa = cohen_kappa_score(annotations1, annotations2, weights='quadratic', labels=[-1, 1, 2, 3, 4, 5])
     return kappa
-
 
 
 def word_tokenize_text(text: str) -> List[str]:
