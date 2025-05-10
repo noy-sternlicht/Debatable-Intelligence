@@ -1,8 +1,6 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-
-
 ## LLM on Trial: Benchmarking LLM-as-a-Judge via Argumentation
 
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
@@ -13,22 +11,21 @@ well current state-of-the-art models perform on this complex task.
   <img src="fig_1.svg" alt="Centered Image" width="400" />
 </p>
 
-
 ## Table of Contents
+
 <!-- TOC -->
-  * [Getting started](#getting-started)
+
+* [Getting started](#getting-started)
     * [Setting up API keys](#setting-up-api-keys)
-  * [Benchmark data](#benchmark-data)
-  * [Reproducing paper results](#reproducing-paper-results)
+* [Benchmark data](#benchmark-data)
+* [Reproducing paper results](#reproducing-paper-results)
     * [Run judges](#run-judges)
     * [Analysis](#analysis)
     * [Speech generation](#speech-generation)
-  * [Citation](#citation)
-  * [Authors](#authors)
+* [Citation](#citation)
+* [Authors](#authors)
+
 <!-- TOC -->
-
-
-
 
 ## Getting started
 
@@ -128,6 +125,7 @@ receives a config file defining which models to run, what prompt to use, and so 
    ```
 
 ### Analysis
+
 1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be
    structured as
    follows:
@@ -170,7 +168,8 @@ receives a config file defining which models to run, what prompt to use, and so 
    --min_shared_annotations 50 \   # Minimum number of shared annotations between judges, referred to as "minimum-sample" in the paper
    --prompt 'zero-shot-good-speech-guidelines'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the no-CoT experiment, 'zero-shot-good-speech-guidelines-short-cot' for the CoT experiment 
    ```
-3. **Run agreement with mean human rating (Tau)**:  Run `scripts/analyse_agreement_with_mean.sh`. You can adjust the script parameters as follows:
+3. **Run agreement with mean human rating (Tau)**:  Run `scripts/analyse_agreement_with_mean.sh`. You can adjust the
+   script parameters as follows:
     ```bash
    python3 src/analyse_agreement_with_mean.py \
    --eval_models_config src/judges_results.json \ # The json file specifying the judges to evaluate
@@ -182,9 +181,11 @@ receives a config file defining which models to run, what prompt to use, and so 
 5. **Run speech source analysis**: Run `scripts/run_source_analysis.sh`.
 
 ### Speech generation
+
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
 file `src/generate_speeches_config.json` defining the used parameters (e.g., temperature, maximum speech length...),
-which you can customize. `GPT_4_1_speeches.csv` contains the 152 generated speeches we analyze in the paper. 
+which you can customize. `GPT_4_1_speeches.csv` contains the 152 generated speeches we analyze in the paper. You could
+use our inference scripts (described [here](#run-judges)) to run the judges over the speeches.
 
 ## Citation
 
