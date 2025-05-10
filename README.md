@@ -128,7 +128,6 @@ receives a config file defining which models to run, what prompt to use, and so 
    ```
 
 ### Analysis
-
 1. **List judges info**: Our analysis scripts receive a json file specifying what judges to evaluate. The file should be
    structured as
    follows:
@@ -180,6 +179,7 @@ receives a config file defining which models to run, what prompt to use, and so 
    --prompt 'zero-shot-good-speech-guidelines-short-cot'  # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the no-CoT experiment, 'zero-shot-good-speech-guidelines-short-cot' for the CoT experiment.
     ```
 4. **Run score distribution analysis**: Run `scripts/analyse_scores_distribution.sh`
+5. **Run speech source analysis**: Run `scripts/run_source_analysis.sh`.
 
 ### Speech generation
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
