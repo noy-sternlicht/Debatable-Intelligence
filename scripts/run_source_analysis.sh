@@ -20,4 +20,4 @@ python3 src/source_analysis.py \
   --eval_models_config src/judges_results.json \
   --output_path source_analysis \
   --data_path data.csv \
-  --prompt 'zero-shot-good-speech-guidelines' \
+  --prompt 'zero-shot-good-speech-guidelines-short-cot' \

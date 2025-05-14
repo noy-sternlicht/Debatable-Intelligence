@@ -1,0 +1,32 @@
+You will be given a paragraph to rephrase. Your task is to rewrite the paragraph using shorter sentences, where each sentence captures a single idea. The content and meaning of the original paragraph should be preserved in your rephrased version.
+
+Here is the paragraph you need to rephrase:
+
+<original_paragraph>
+{PARAGRAPH}
+</original_paragraph>
+
+Follow these steps to complete the task:
+
+1. Read the paragraph carefully to understand its main ideas and content.
+2. Break down the information into individual concepts or points.
+3. Rewrite each concept as a separate, concise sentence.
+4. Ensure that each sentence conveys only one main idea.
+5. Maintain the logical flow and connection between sentences.
+6. Double-check that all information from the original paragraph is included in your rephrased version.
+7. Verify that the overall meaning and intent of the original paragraph are preserved.
+
+Remember:
+- Keep sentences short and to the point.
+- Use clear and simple language.
+- Avoid complex sentence structures or multiple clauses.
+- Do not add any new information that wasn't in the original paragraph.
+- Do not omit any important details from the original paragraph.
+
+Present your rephrased paragraph in the following format:
+
+<result>
+[Insert your rephrased paragraph here]
+</result>
+
+Before submitting your final answer, review your rephrased paragraph to ensure it accurately represents the content of the original while using shorter, more focused sentences.

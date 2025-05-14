@@ -1,10 +1,11 @@
 import argparse
 import json
 import os
+from scipy.stats import pearsonr
 
 import pandas as pd
 
-from util import setup_default_logger, read_annotation_data, agg_model_predictions
+from util import setup_default_logger, read_annotation_data, agg_model_predictions, compute_kendall_tau
 
 
 def avg_all_annotators(annotations: pd.DataFrame, annotations_col_name) -> float:
@@ -72,10 +73,26 @@ def main():
         human_averages[source] = source_average
 
     sources_sorted = sorted(human_averages.keys(), key=lambda x: human_averages[x])
+    human_sources_values = [human_averages[source] for source in sources_sorted]
     human_averages['Judge'] = 'Human'
     results.append(human_averages)
     avg_results_per_source_df = pd.DataFrame(results)
+
     avg_results_per_source_df = avg_results_per_source_df[['Judge'] + sources_sorted]
+    avg_results_per_source_df['tau-c'] = avg_results_per_source_df.apply(
+        lambda row: compute_kendall_tau(row[sources_sorted].values.tolist(), human_sources_values, variant='c'), axis=1
+    )
+
+
+
+    avg_results_per_source_df['pearson'] = avg_results_per_source_df.apply(
+        lambda row: pearsonr(row[sources_sorted].values.tolist(), human_sources_values)[0], axis=1
+    )
+
+    # for _, row in avg_results_per_source_df.iterrows():
+    #     print(row[sources_sorted].values.tolist())
+    #     print(human_sources_values)
+
 
     avg_results_per_source_df = avg_results_per_source_df.round(3)
     avg_results_per_source_path = os.path.join(args.output_path, 'avg_results_per_source.csv')

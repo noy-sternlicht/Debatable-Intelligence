@@ -1,0 +1,40 @@
+{
+  "eval_models": [
+    {
+      "name": "GPT-4.1-mini",
+      "results": {
+        "openai_gpt-4.1-mini": "output/gpt-4.1"
+      }
+    },
+    {
+      "name": "GPT-4.1-mini",
+      "results": {
+        "openai_gpt-4.1-mini": "output/gpt_4_1_mini_gen"
+      }
+    },
+    {
+      "name": "Llama-3.3-70B",
+      "results": {
+        "huggingface_meta-llama/Llama-3.3-70B-Instruct": "output/zero_shot_llama-70b-all"
+      }
+    },
+    {
+      "name": "Llama-3.3-70B",
+      "results": {
+        "huggingface_meta-llama/Llama-3.3-70B-Instruct": "output/qwen_llama-3_3_70b_gen"
+      }
+    },
+    {
+      "name": "Qwen-2.5-32B",
+      "results": {
+        "huggingface_Qwen/Qwen2.5-32B-Instruct": "output/zero_shot_qwen_32b"
+      }
+    },
+    {
+      "name": "Qwen-2.5-32B",
+      "results": {
+        "huggingface_Qwen/Qwen2.5-32B-Instruct": "output/qwen_32b_gen"
+      }
+    }
+  ]
+}
