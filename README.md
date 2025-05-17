@@ -187,6 +187,25 @@ file `src/generate_speeches_config.json` defining the used parameters (e.g., tem
 which you can customize. `GPT_4_1_speeches.csv` contains the 152 generated speeches we analyze in the paper. You could
 use our inference scripts (described [here](#run-judges)) to run the judges over the speeches.
 
+### Key point analysis
+
+As specified in the paper, we first rephrase CoT explanations by the judges as paragraphs of shorter sentences. To run
+this step, execute `scripts/preprocess_key_point_analysis.sh`. The python script it runs receives the following
+parameters:
+
+```bash
+python3  src/point_analysis_preprocessing.py \
+ --judges_results src/models_for_keypoint_analysis.json \  # The json file specifying the judges to evaluate
+ --output_path point_analysis_preprocessing \  # Where to save the results
+ --prompt 'zero-shot-good-speech-guidelines-short-cot' \ # The prompt used to generate the results. 'zero-shot-good-speech-guidelines' for the no-CoT experiment, 'zero-shot-good-speech-guidelines-short-cot' for the CoT experiment
+ --openai_api_key secret_keys/openai_key \ # The path to the OpenAI API key
+ --preprocessing_prompt 'prompts/preprocess_reasoning.txt' \ # Perprocessing prompt
+ --model_name gpt-4.1 # Preprocessing model (should be an OpenAI model)
+```
+
+We next run the key-point analysis using watsonx.ai, and provide out output in `keypoints.csv`. `scripts/run_kpa.sh`
+runs the analysis we report in the paper.
+
 ## Citation
 
 If you use this code or data in your research, please cite our paper:

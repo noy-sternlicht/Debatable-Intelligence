@@ -78,13 +78,21 @@ def main():
                 pbar.update(1)
 
     results = []
-    for speech_id, speech_info in all_speeches.items():
-        speech_info['id'] = speech_id
-        results.append(speech_info)
-
+    comment_id = 0
+    for model_name in model_names:
+        for speech_id, speech_info in all_speeches.items():
+            result = {
+                'id': speech_id,
+                'topic': speech_info['topic'],
+                'source': speech_info['source'],
+                'text': speech_info['text'],
+                'model': model_name,
+                'reasoning': speech_info[f'{model_name}_reasoning'],
+                'comment_id': comment_id,
+            }
+            results.append(result)
+            comment_id += 1
     results_df = pd.DataFrame(results)
-    results_df = results_df[
-        ['id', 'topic', 'source', 'text'] + [f'{model_name}_reasoning' for model_name in model_names]]
     output_path = os.path.join(args.output_path, f'{args.prompt}_reasoning.csv')
     results_df.to_csv(output_path, index=False)
     logger.info(f'Results saved to {output_path}')
