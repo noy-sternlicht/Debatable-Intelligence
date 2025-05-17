@@ -14,17 +14,16 @@ well current state-of-the-art models perform on this complex task.
 ## Table of Contents
 
 <!-- TOC -->
-
-* [Getting started](#getting-started)
+  * [Getting started](#getting-started)
     * [Setting up API keys](#setting-up-api-keys)
-* [Benchmark data](#benchmark-data)
-* [Reproducing paper results](#reproducing-paper-results)
+  * [Benchmark data](#benchmark-data)
+  * [Reproducing paper results](#reproducing-paper-results)
     * [Run judges](#run-judges)
     * [Analysis](#analysis)
     * [Speech generation](#speech-generation)
-* [Citation](#citation)
-* [Authors](#authors)
-
+    * [Key point analysis](#key-point-analysis)
+  * [Citation](#citation)
+  * [Authors](#authors)
 <!-- TOC -->
 
 ## Getting started
