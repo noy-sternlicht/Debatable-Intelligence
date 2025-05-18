@@ -4,8 +4,8 @@
 ## LLM on Trial: Benchmarking LLM-as-a-Judge via Argumentation
 
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
-propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we present a unique
-dataset of 631 debate speeches with careful annotations from multiple human raters. Through this dataset, we examine how
+propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we leverage a unique
+dataset of 631 debate speeches, carefully rated by multiple human annotators. Through this dataset, we examine how
 well current state-of-the-art models perform on this complex task.
 <p align="center">
   <img src="fig_1.svg" alt="Centered Image" width="400" />
@@ -16,7 +16,7 @@ well current state-of-the-art models perform on this complex task.
 <!-- TOC -->
   * [Getting started](#getting-started)
     * [Setting up API keys](#setting-up-api-keys)
-  * [Benchmark data](#benchmark-data)
+  * [Data](#data)
   * [Reproducing paper results](#reproducing-paper-results)
     * [Run judges](#run-judges)
     * [Analysis](#analysis)
@@ -64,9 +64,10 @@ follows:
    The files specified in the above snippet (`secret_keys/***_key`) are the default locations where the code will look
    for the keys.
 
-## Benchmark data
+## Data
 
-We make the benchmark data available at `data.csv`. The file contains the following fields:
+We use a subsection of 631 speeches from [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
+evaluation data. This section is available at `data.csv`. The file contains the following fields:
 
 * `id`: The unique identifier for the speech.
 * `topic_id`: The unique identifier for the topic.
