@@ -66,8 +66,8 @@ follows:
 
 ## Data
 
-We use a subsection of 631 speeches from [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
-evaluation data. This section is available at `data.csv`. The file contains the following fields:
+We use a subsection of 631 speeches from the [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
+evaluation dataset. This section is available at `data.csv`. The file contains the following fields:
 
 * `id`: The unique identifier for the speech.
 * `topic_id`: The unique identifier for the topic.
