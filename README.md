@@ -202,7 +202,7 @@ python3  src/point_analysis_preprocessing.py \
  --model_name gpt-4.1 # Preprocessing model (should be an OpenAI model)
 ```
 
-We provide the KPA output in `keypoints.csv`. `scripts/run_kpa.sh` runs the analysis we report in the paper.
+`scripts/run_kpa.sh` runs the analysis we report in the paper.
 
 ## Citation
 

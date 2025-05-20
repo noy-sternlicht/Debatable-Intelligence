@@ -3,3 +3,4 @@ secret_keys
 .DS_Store
 GPT_4_1_speeches.csv
 data_for_keypoint_analysis.csv
+keypoints.csv
