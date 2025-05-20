@@ -1,7 +1,7 @@
 [![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
-## Debatable AI: Benchmarking LLM Judges via Debate Speech Evaluation
+## Debatable Intelligence: Benchmarking LLM Judges via Debate Speech Evaluation
 
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
 propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we leverage a unique
