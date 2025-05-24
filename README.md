@@ -14,16 +14,18 @@ well current state-of-the-art models perform on this complex task.
 ## Table of Contents
 
 <!-- TOC -->
-  * [Getting started](#getting-started)
+
+* [Getting started](#getting-started)
     * [Setting up API keys](#setting-up-api-keys)
-  * [Data](#data)
-  * [Reproducing paper results](#reproducing-paper-results)
+* [Data](#data)
+* [Reproducing paper results](#reproducing-paper-results)
     * [Run judges](#run-judges)
     * [Analysis](#analysis)
     * [Speech generation](#speech-generation)
     * [Key point analysis](#key-point-analysis)
-  * [Citation](#citation)
-  * [Authors](#authors)
+* [Citation](#citation)
+* [Authors](#authors)
+
 <!-- TOC -->
 
 ## Getting started
@@ -66,7 +68,8 @@ follows:
 
 ## Data
 
-We use a subsection of 631 speeches from the [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
+We use a subsection of 631 speeches from
+the [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
 evaluation dataset. This section is available at `data.csv`. The file contains the following fields:
 
 * `id`: The unique identifier for the speech.
@@ -184,7 +187,8 @@ receives a config file defining which models to run, what prompt to use, and so 
 
 To generate speeches using GPT-4.1, run `scripts/generate_speeches.sh`. The script receives a json
 file `src/generate_speeches_config.json` defining the used parameters (e.g., temperature, maximum speech length...),
-which you can customize.  You could use our inference scripts (described [here](#run-judges)) to run the judges over the speeches.
+which you can customize. We provide the set of generated speeches we use in `GPT_4_1_speeches.csv`. You could use our
+inference scripts (described [here](#run-judges)) to run the judges over the speeches.
 
 ### Key point analysis
 
@@ -202,7 +206,11 @@ python3  src/point_analysis_preprocessing.py \
  --model_name gpt-4.1 # Preprocessing model (should be an OpenAI model)
 ```
 
-`scripts/run_kpa.sh` runs the analysis we report in the paper.
+We provide examples of the preprocessed data and our KPA results in `data_for_keypoint_analysis.csv`
+and `keypoints.csv`,
+respectively. We use watsonx.ai to run the KPA.
+
+`scripts/run_kpa.sh` runs the analysis we report in the paper (given the initial KPA results).
 
 ## Citation
 
