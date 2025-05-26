@@ -231,7 +231,7 @@ If you use this code or data in your research, please cite our paper:
 
 ## Authors
 
-* [Noy Sternlicht](https://x.com/NoySternlicht)
+* [Noy Sternlicht](https://noy-sternlicht.github.io/)
 * [Ariel Gera](https://scholar.google.com/citations?user=ESCkne8AAAAJ&hl=en)
 * [Roy Bar-Haim](https://research.ibm.com/people/roy-bar-haim)
 * [Tom Hope](https://tomhoper.github.io/)
