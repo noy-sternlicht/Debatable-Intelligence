@@ -69,8 +69,8 @@ follows:
 ## Data
 
 We use a subsection of 631 speeches from
-the [Project Debater](https://www.nature.com/articles/s41586-021-03215-w#citeas)
-evaluation dataset. This section is available at `data.csv`. The file contains the following fields:
+the Project Debater [evaluation dataset](https://huggingface.co/datasets/ibm-research/debate_speeches). This section is
+available at `data.csv`. The file contains the following fields:
 
 * `id`: The unique identifier for the speech.
 * `topic_id`: The unique identifier for the topic.
@@ -231,7 +231,7 @@ If you use this code or data in your research, please cite our paper:
 
 ## Authors
 
-* [Noy Sternlicht](https://noy-sternlicht.github.io/)
+* [Noy Sternlicht](https://noy-sternlicht.github.io)
 * [Ariel Gera](https://scholar.google.com/citations?user=ESCkne8AAAAJ&hl=en)
 * [Roy Bar-Haim](https://research.ibm.com/people/roy-bar-haim)
 * [Tom Hope](https://tomhoper.github.io/)
