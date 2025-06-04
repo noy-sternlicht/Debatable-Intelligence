@@ -2,13 +2,13 @@
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
 ## Debatable Intelligence: Benchmarking LLM Judges via Debate Speech Evaluation
-
 As LLM judges grow in popularity, evaluating their performance on cognitively challenging tasks becomes crucial. We
 propose using debate speech evaluation as a new benchmarking task for LLM judges. To support this, we leverage a unique
 dataset of 631 debate speeches, carefully rated by multiple human annotators. Through this dataset, we examine how
 well current state-of-the-art models perform on this complex task.
+
 <p align="center">
-  <img src="fig_1.svg" alt="Centered Image" width="400" />
+  <img src="twitter-banner.gif" alt="Centered Image" />
 </p>
 
 ## Table of Contents
