@@ -68,8 +68,7 @@ follows:
 
 ## Data
 
-We use a subsection of 631 speeches from
-the Project Debater [evaluation dataset](https://huggingface.co/datasets/ibm-research/debate_speeches). This section is
+We use a subsection of 631 speeches from [Project Debater](https://www.nature.com/articles/s41586-021-03215-w)'s [evaluation dataset](https://huggingface.co/datasets/ibm-research/debate_speeches). This section is
 available at `data.csv`. The file contains the following fields:
 
 * `id`: The unique identifier for the speech.
