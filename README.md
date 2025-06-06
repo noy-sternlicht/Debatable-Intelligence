@@ -1,4 +1,4 @@
-[![Arxiv](https://img.shields.io/badge/Arxiv-YYMM.NNNNN-red?style=flat-square&logo=arxiv&logoColor=white)](https://put-here-your-paper.com)
+[![Arxiv](https://img.shields.io/badge/Arxiv-2506.05062-red?style=flat-square&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2506.05062)
 [![Python Versions](https://img.shields.io/badge/Python-3.11-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Project Page](https://img.shields.io/badge/Project%20Page-Here-green?style=flat-square&logo=github)](https://noy-sternlicht.github.io/Debatable-Intelligence-Web)
 
@@ -217,21 +217,20 @@ respectively. We use watsonx.ai to run the KPA.
 If you use this code or data in your research, please cite our paper:
 
 ```bibtex
-@article{author2025paper,
-  title={Paper Title},
-  author={Last, First and Coauthor, Another},
-  journal={Journal Name},
-  volume={X},
-  number={Y},
-  pages={ZZ--ZZ},
-  year={2025},
-  publisher={Publisher}
+@misc{sternlicht2025debatableintelligencebenchmarkingllm,
+      title={Debatable Intelligence: Benchmarking LLM Judges via Debate Speech Evaluation}, 
+      author={Noy Sternlicht and Ariel Gera and Roy Bar-Haim and Tom Hope and Noam Slonim},
+      year={2025},
+      eprint={2506.05062},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2506.05062}, 
 }
 ```
 
 ## Authors
 
-* [Noy Sternlicht](https://noy-sternlicht.github.io)
+* [Noy Sternlicht](https://noy-sternlicht.github.io/)
 * [Ariel Gera](https://scholar.google.com/citations?user=ESCkne8AAAAJ&hl=en)
 * [Roy Bar-Haim](https://research.ibm.com/people/roy-bar-haim)
 * [Tom Hope](https://tomhoper.github.io/)
