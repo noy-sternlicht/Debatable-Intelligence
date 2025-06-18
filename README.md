@@ -15,19 +15,22 @@ well current state-of-the-art models perform on this complex task.
 ## Table of Contents
 
 <!-- TOC -->
-
-* [Getting started](#getting-started)
+  * [Updates](#updates)
+  * [Getting started](#getting-started)
     * [Setting up API keys](#setting-up-api-keys)
-* [Data](#data)
-* [Reproducing paper results](#reproducing-paper-results)
+  * [Data](#data)
+  * [Reproducing paper results](#reproducing-paper-results)
     * [Run judges](#run-judges)
     * [Analysis](#analysis)
     * [Speech generation](#speech-generation)
     * [Key point analysis](#key-point-analysis)
-* [Citation](#citation)
-* [Authors](#authors)
-
+  * [Citation](#citation)
+  * [Authors](#authors)
 <!-- TOC -->
+
+## Updates
+* **2025-06-18**: Our benchmark dataset - a curated subset of [ibm-research/debate_speeches](https://huggingface.co/datasets/ibm-research/debate_speeches) - is now available on Hugging Face! Check it out here: [noystl/speech-quality-dataset](https://huggingface.co/datasets/noystl/speech-quality-dataset) 🤗  
+  You can also find the dataset locally in this repository as `data.csv`.
 
 ## Getting started
 
