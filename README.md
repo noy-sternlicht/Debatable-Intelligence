@@ -29,6 +29,7 @@ well current state-of-the-art models perform on this complex task.
 <!-- TOC -->
 
 ## Updates
+* **2025-09-18**: Our paper have been accepted to EMNLP 2025 main! 🎉 
 * **2025-06-18**: Our benchmark dataset - a curated subset of [ibm-research/debate_speeches](https://huggingface.co/datasets/ibm-research/debate_speeches) - is now available on Hugging Face! Check it out here: [noystl/speech-quality-dataset](https://huggingface.co/datasets/noystl/speech-quality-dataset) 🤗  
   You can also find the dataset locally in this repository as `data.csv`.
 
